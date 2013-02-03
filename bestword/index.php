@@ -1,6 +1,7 @@
 <html>
 <title>The Best Word Ever</title>
 <head>
+<script src="jquery.js"></script>
 <script>
 
 var currentWord;
@@ -13,12 +14,12 @@ function onYes()
     {
 		if (xmlhttpy.readyState==4 && xmlhttpy.status==200)
 		{
-			currentWord = xmlhttpy.responseText;
-			document.getElementById("word").innerHTML=currentWord;
-			//location.reload(true);
+			//currentWord = xmlhttpy.responseText;
+			//document.getElementById("word").innerHTML=currentWord;
+			location.reload(true);
 		}
     }
-xmlhttpy.open("GET","getyes.php?q="+currentWord,false);
+xmlhttpy.open("GET","getyes.php?q="+currentWord,true);
 xmlhttpy.send();
 
 }
@@ -31,12 +32,12 @@ function onNo()
     {
 		if (xmlhttp.readyState==4 && xmlhttp.status==200)
 		{
-			currentWord = xmlhttp.responseText;
-			document.getElementById("word").innerHTML=currentWord;
-			//location.reload(true);
+			//currentWord = xmlhttp.responseText;
+			//document.getElementById("word").innerHTML=currentWord;
+			location.reload(true);
 		}
     }
-xmlhttp.open("GET","getno.php?q="+currentWord,false);
+xmlhttp.open("GET","getno.php?q="+currentWord,true);
 xmlhttp.send(); 
 
 }
