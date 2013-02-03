@@ -6,7 +6,7 @@ mysql_connect("mydb.ics.purdue.edu",$username,$password);
 
 @mysql_select_db($database) or die( "Unable to select database");
 set_time_limit(10000);
-$bigfile = file_get_contents("wordsEn.txt");
+$bigfile = file_get_contents("wordsMini.txt");
 $splitsies = split("\n", $bigfile);
 
 
